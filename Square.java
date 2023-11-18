@@ -14,6 +14,11 @@ public class Square {
         isOccupied = true;       
     }
     
+    public Square(){
+        piece=null;
+        isOccupied=false;
+    }
+    
     public void clearSquare(){
         this.isOccupied = false;
         piece=null;

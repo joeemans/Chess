@@ -22,15 +22,15 @@ abstract class Piece {
         return color;
     }
 
-    public void setColor(String color) {
+    private void setColor(String color) {
         this.color = color;
     }
 
-    public void setType(String type) {
+    private void setType(String type) {
         this.type = type;
     }
 
-    public void setPosition(ChessAlphabet position) {
+    private void setPosition(ChessAlphabet position) {
         this.position = position;
     }
 
@@ -42,6 +42,6 @@ abstract class Piece {
         return position;
     }
 
-    abstract boolean isValidMove(Board board, ChessAlphabet start, ChessAlphabet end);
+    abstract boolean isValidMove(ChessGame board, ChessAlphabet start, ChessAlphabet end);
 
 }

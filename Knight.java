@@ -8,7 +8,7 @@ public class Knight extends Piece {
     }
 
     @Override
-    boolean isValidMove(Board board, ChessAlphabet start, ChessAlphabet end) {
+    boolean isValidMove(ChessGame board, ChessAlphabet start, ChessAlphabet end) {
         int rowS = start.getRank();
         int colS = start.getFile();
         int rowE = end.getRank();
@@ -16,7 +16,7 @@ public class Knight extends Piece {
         //checking is starting block is occupied (so that we have a piece to move, and the distance is equal to knight path
         if (board.positions[rowS][colS].isOccupied && ((Math.abs(rowS - rowE) == 2 && Math.abs(colS - colE) == 1) || (Math.abs(rowS - rowE) == 1 && Math.abs(colS - colE) == 2))) {
             //knight takes
-            if (board.positions[rowS][colS].isOccupied) {
+            if (board.positions[rowE][colE].isOccupied) {
                 if (((board.positions[rowS][colS].piece.isWhite) && !((board.positions[rowE][colE].piece.isWhite))) 
                         || (!(board.positions[rowS][colS].piece.isWhite) && (board.positions[rowE][colE].piece.isWhite))) {
                     return true;
@@ -25,7 +25,6 @@ public class Knight extends Piece {
             //in this case knight jumps straight to destination
             return true;
         }
-
         return false;
     }
 }

@@ -8,13 +8,14 @@ package chess;
  *
  * @author youss
  */
-public class Chess {
+public class Test {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidMoveException, InvalidSyntaxException{
         // TODO code application logic here
+        ChessGame chessGame = new ChessGame();
+        chessGame.loadGame("ChessGame.txt");
     }
-    
 }
